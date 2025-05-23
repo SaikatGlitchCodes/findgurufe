@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+Great! Here's a **structured, day-wise delivery plan** to build your **basic student-tutor request & chat webapp** in **7 days**. This plan assumes you're working solo or with a small team and are comfortable with React, Node.js, and Firebase/Prisma.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## ✅ **Day-Wise Development Plan**
 
-In the project directory, you can run:
+### 🔹 **Day 1: Project Setup & Authentication**
 
-### `npm start`
+**Goals**:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Set up frontend (Next.js + TailwindCSS)
+* Set up backend (Node.js/Express or Next.js API)
+* Set up database (Prisma with PostgreSQL or MySQL)
+* Set up authentication (Clerk or Firebase Auth)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Tasks**:
 
-### `npm test`
+* Initialize frontend and backend repos
+* Design basic layout: landing page, login/signup
+* Integrate authentication (Google + email/password)
+* Create users table in DB with role (student/tutor)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### 🔹 **Day 2: Student - Create & View Requests**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Goals**:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Build "Create Request" form
+* Display student's own requests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Tasks**:
 
-### `npm run eject`
+* Create `Request` model in DB (title, desc, tags, category, etc.)
+* Form validation + submit to API
+* Show posted requests in dashboard
+* Add "Mark as Solved" feature
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🔹 **Day 3: Tutor - Browse Requests & Express Interest**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Goals**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Display public list of requests
+* Tutor can view and choose to chat
 
-## Learn More
+**Tasks**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Tutor dashboard: filter/search requests
+* Add “Start Chat” button on each request
+* Create `ChatRoom` model in DB (request\_id, student\_id, tutor\_id)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### 🔹 **Day 4: Chat System (Real-time)**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Goals**:
 
-### Analyzing the Bundle Size
+* Implement real-time chat between student and tutor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Tasks**:
 
-### Making a Progressive Web App
+* Use **Firebase Realtime DB or Firestore**
+* Auto-create chatroom on tutor’s first message
+* Chat UI (basic bubbles, timestamps)
+* Store and sync messages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+### 🔹 **Day 5: UI Polish & Role Separation**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Goals**:
 
-### Deployment
+* Clean UI & navigation for both roles
+* Proper redirection post-login (student/tutor)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Tasks**:
 
-### `npm run build` fails to minify
+* Role-based routing (e.g., `/student/*`, `/tutor/*`)
+* Sidebar navigation for both roles
+* Show status of requests (e.g., "In Chat", "Solved")
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+### 🔹 **Day 6: Admin Panel & Moderation (Optional MVP)**
+
+**Goals**:
+
+* Create basic admin access (hardcoded)
+* Moderate or delete inappropriate content
+
+**Tasks**:
+
+* View all users & requests
+* Ban user, delete requests
+* Add report button to requests or chat
+
+---
+
+### 🔹 **Day 7: Testing, Bug Fixes & Deployment**
+
+**Goals**:
+
+* Final QA & polish
+* Deploy to production
+
+**Tasks**:
+
+* Test flows (auth, request creation, chat)
+* Fix edge cases (double request, no chatroom, etc.)
+* Deploy frontend to **Vercel**, backend to **Render/Railway**
+* Set up database on **Supabase/NeonDB/Railway**
+
+---
+
+## 🔧 Tech Stack Summary
+
+| Layer       | Tool/Library                 |
+| ----------- | ---------------------------- |
+| Frontend    | Next.js + Tailwind           |
+| Backend/API | Next.js API / Express.js     |
+| Auth        | Clerk / Firebase             |
+| DB & ORM    | PostgreSQL + Prisma          |
+| Chat        | Firebase (Firestore or RTDB) |
+| Deployment  | Vercel + Railway             |
+
+---
+
+Would you like me to:
+
+* Generate the **initial folder structure**?
+* Help you **initialize the Prisma schema**?
+* Start with **Day 1 code** setup?
+
+Let me know where you want to begin.
