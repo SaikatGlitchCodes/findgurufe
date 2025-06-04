@@ -10,13 +10,13 @@ Great! Here's a **structured, day-wise delivery plan** to build your **basic stu
 
 * Set up frontend (Next.js + TailwindCSS)
 * Set up backend (Node.js/Express or Next.js API)
-* Set up database (Prisma with PostgreSQL or MySQL)
-* Set up authentication (Clerk or Firebase Auth)
+* Set up database (Supabase)
+* Set up authentication (Clerk or Supabase)
 
 **Tasks**:
 
-* Initialize frontend and backend repos
-* Design basic layout: landing page, login/signup
+* Initialize frontend and backend repos ✅
+* Design basic layout: landing page, login/signup 
 * Integrate authentication (Google + email/password)
 * Create users table in DB with role (student/tutor)
 
@@ -134,3 +134,11 @@ Would you like me to:
 * Start with **Day 1 code** setup?
 
 Let me know where you want to begin.
+
+
+  // useEffect : Hook : helps you to do side effects in your components
+  // side effects are things like fetching data, subscribing to events, or manually changing the DOM
+  // null, [], [state, state1]
+  // null: runs only when the component mounts
+  // []: runs only once when the component mounts, not on updates
+  // [state]: runs when the component mounts and whenever the specified state changes
