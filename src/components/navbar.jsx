@@ -13,6 +13,7 @@ export default function Navbar({session}) {
             <a href="/" className='hover:text-gray-400'>Home</a>
             <a href="/about" className='hover:text-gray-400'>About</a>
             <a href="/contact" className='hover:text-gray-400'>Contact</a>
+            <a href="/create-request" className='hover:text-gray-400'>Create Request</a>
         </nav>
         <div className='flex items-center space-x-4'>
             { !session ? 
