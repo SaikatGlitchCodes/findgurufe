@@ -7,34 +7,21 @@ import SignIn from './pages/sign-in';
 import SignUp from './pages/sign-up';
 import NotFound from './pages/NotFound';
 import CreateRequest from './pages/CreateRequest';
+import UserContext from './context/userContext';
 
 export default function App() {
-  const [session, setSession] = useState(null)
 
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-    })
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-    })
-
-    return () => subscription.unsubscribe()
-  }, [])
 
   return (
     <BrowserRouter>
-      <Navbar session={Boolean(session)}/>
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path='/create-request' element={session? <CreateRequest /> : <SignIn/>} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+        <Navbar />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path='/create-request' element={true ? <CreateRequest /> : <SignIn />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
     </BrowserRouter>
   )
 }

@@ -1,7 +1,10 @@
 import React from 'react'
 import supabase from '../util/supabase'
-
-export default function Navbar({session}) {
+import { useUser } from '../context/userContext';
+  
+export default function Navbar() {
+  const { session } = useUser();
+  
   const signout = async () => {
     const { error } = await supabase.auth.signOut()
     if (error) console.error('Error signing out:', error.message)
